@@ -2,7 +2,7 @@ import { IUrl } from "../types/url";
 import { ConflictError } from "../utils/errorHandler";
 import  URLschema  from "../models/short_url.model";
 
-export const saveShortUrl = async (shortUrl: string, longUrl: string, userId: string) => {
+export const saveShortUrl = async (shortUrl: string, longUrl: string, userId?: string | undefined) => {
     try{
         const newUrl: IUrl = new URLschema({
             full_url:longUrl,
